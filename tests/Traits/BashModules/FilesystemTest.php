@@ -19,15 +19,14 @@ class FilesystemTest extends RocketeerTestCase
 		// Create dummy file
 		$folder = $this->server.'/releases/20000000000000/src';
 		mkdir($folder);
-		file_put_contents($folder.'/foobar.txt', 'test');
+		file_put_contents($folder.'/source.txt', 'test');
 
 		$task    = $this->pretendTask();
-		$folder  = '{path.base}/foobar.txt';
+		$folder  = '{path.base}/source.txt';
 		$share   = $task->share($folder);
-		$tempLink = $this->server.'/releases/20000000000000//src/foobar.txt-temp';
 		$matcher = array(
-			sprintf('ln -s %s %s', $this->server.'/shared//src/foobar.txt', $tempLink, $tempLink),
-			sprintf('mv -Tf %s %s', $tempLink, $this->server.'/releases/20000000000000//src/foobar.txt'),
+			sprintf('rm -rf %s', $this->server.'/shared//src/source.txt'),
+			sprintf('ln -s %s %s', $this->server.'/releases/20000000000000//src/source.txt',$this->server.'/shared//src/source.txt'),
 		);
 
 		$this->assertEquals($matcher, $share);

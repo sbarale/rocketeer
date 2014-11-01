@@ -40,8 +40,8 @@ class DeployTest extends RocketeerTestCase
 			),
 			"mv {server}/current {server}/releases/{release}",
 			array(
-				"ln -s {server}/releases/{release} {server}/current-temp",
-				"mv -Tf {server}/current-temp {server}/current",
+				"rm -rf {server}/current",
+				"ln -s {server}/releases/{release} {server}/current",
 			),
 		);
 
@@ -79,8 +79,8 @@ class DeployTest extends RocketeerTestCase
 			),
 			"mv {server}/current {server}/releases/{release}",
 			array(
-				"ln -s {server}/releases/{release} {server}/current-temp",
-				"mv -Tf {server}/current-temp {server}/current",
+				"rm -rf {server}/current",
+				"ln -s {server}/releases/{release} {server}/current",
 			),
 		);
 
@@ -125,8 +125,8 @@ class DeployTest extends RocketeerTestCase
 			),
 			"mv {server}/current {server}/releases/{release}",
 			array(
-				"ln -s {server}/releases/{release} {server}/current-temp",
-				"mv -Tf {server}/current-temp {server}/current",
+				"rm -rf {server}/current",
+				"ln -s {server}/releases/{release} {server}/current",
 			),
 		);
 
@@ -168,8 +168,8 @@ class DeployTest extends RocketeerTestCase
 			),
 			"mv {server}/current {server}/releases/{release}",
 			array(
-				"ln -s {server}/releases/{release} {server}/current-temp",
-				"mv -Tf {server}/current-temp {server}/current",
+				"rm -rf {server}/current",
+				"ln -s {server}/releases/{release} {server}/current",
 			),
 		);
 
@@ -200,8 +200,8 @@ class DeployTest extends RocketeerTestCase
 			),
 			"mv {server}/current {server}/releases/{release}",
 			array(
-				"ln -s {server}/releases/{release} {server}/current-temp",
-				"mv -Tf {server}/current-temp {server}/current",
+				"rm -rf {server}/current",
+				"ln -s {server}/releases/{release} {server}/current",
 			),
 		);
 
